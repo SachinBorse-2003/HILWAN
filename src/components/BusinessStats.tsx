@@ -54,24 +54,28 @@ function useCountUp(target: number, duration: number) {
   return count;
 }
 
+function StatCard({ label, suffix, desc, icon, duration }: (typeof stats)[0]) {
+  const count = useCountUp(label, duration);
+  return (
+    <div className={styles.statCard}>
+      <FontAwesomeIcon icon={icon} className={styles.icon} />
+      <div className={styles.label}>
+        {count}
+        {suffix}
+      </div>
+      <div className={styles.desc}>{desc}</div>
+    </div>
+  );
+}
+
 export default function BusinessStats() {
   return (
     <section className={styles.statsSection}>
       <div className={styles.statsWrap}>
-        {stats.map((stat, i) => {
-          const count = useCountUp(stat.label, stat.duration);
-          return (
-            <div className={styles.statCard} key={i}>
-              <FontAwesomeIcon icon={stat.icon} className={styles.icon} />
-              <div className={styles.label}>
-                {count}
-                {stat.suffix}
-              </div>
-              <div className={styles.desc}>{stat.desc}</div>
-            </div>
-          );
-        })}
+        {stats.map((stat, i) => (
+          <StatCard key={i} {...stat} />
+        ))}
       </div>
     </section>
   );
-} 
+}
