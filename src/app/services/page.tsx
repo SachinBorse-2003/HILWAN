@@ -1,31 +1,44 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PageBanner from "../../components/PageBanner";
+import ServicesSection from "../../components/ServicesSection";
+import BusinessStats from "../../components/BusinessStats";
 
 export default function ServicesPage() {
   return (
     <>
       <Header />
       <PageBanner title="Our Services" img="/Crane3.png" />
-      <main style={{ minHeight: "40vh", background: "var(--color-blue)", padding: "2rem 0" }}>
-        <section style={{ maxWidth: 1000, margin: "0 auto", color: "#fff" }}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 32, justifyContent: "center" }}>
-            <div style={{ background: "#222a3a", borderRadius: 16, padding: 24, width: 300, textAlign: "center" }}>
-              <img src="/Crane1.png" alt="Rental Cranes" style={{ width: 80, marginBottom: 12 }} />
-              <h3 style={{ color: "var(--color-gold)" }}>Rental Cranes</h3>
-              <p>Modern, well-maintained cranes for every project size. Certified operators, safety-focused, and available 24/7 for urgent needs.</p>
-            </div>
-            <div style={{ background: "#222a3a", borderRadius: 16, padding: 24, width: 300, textAlign: "center" }}>
-              <img src="/Light-Truck1.png" alt="Light Trucks" style={{ width: 80, marginBottom: 12 }} />
-              <h3 style={{ color: "var(--color-gold)" }}>Light Trucks</h3>
-              <p>Efficient cargo transport for small and medium loads. Flexible scheduling, GPS-tracked, and experienced drivers ensure timely delivery.</p>
-            </div>
-            <div style={{ background: "#222a3a", borderRadius: 16, padding: 24, width: 300, textAlign: "center" }}>
-              <img src="/Heavy-Truck1.png" alt="Heavy Trucks" style={{ width: 80, marginBottom: 12 }} />
-              <h3 style={{ color: "var(--color-gold)" }}>Heavy Trucks</h3>
-              <p>Heavy-duty transport for large cargo and construction materials. Secure, reliable, and compliant with all UAE regulations.</p>
+      <main>
+        <section style={{ background: "#fff", padding: "2.5rem 0" }}>
+          <ServicesSection />
+        </section>
+        <section style={{ background: "#222a3a", color: "#fff", padding: "2.5rem 0" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+            <h2 style={{ color: "var(--color-gold)", marginBottom: 16 }}>Why Choose Hilwan?</h2>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 32, justifyContent: "center", marginTop: 32 }}>
+              <div style={{ background: "#181c2a", borderRadius: 16, padding: 24, width: 260 }}>
+                <b style={{ color: "var(--color-gold)" }}>30+ Years Experience</b>
+                <p>We bring decades of expertise to every project, ensuring safety and reliability.</p>
+              </div>
+              <div style={{ background: "#181c2a", borderRadius: 16, padding: 24, width: 260 }}>
+                <b style={{ color: "var(--color-gold)" }}>Modern Fleet</b>
+                <p>Our cranes and trucks are modern, well-maintained, and ready for any challenge.</p>
+              </div>
+              <div style={{ background: "#181c2a", borderRadius: 16, padding: 24, width: 260 }}>
+                <b style={{ color: "var(--color-gold)" }}>24/7 Support</b>
+                <p>Our team is available around the clock for urgent needs and support.</p>
+              </div>
             </div>
           </div>
+        </section>
+        <section style={{ background: "#fff", color: "#fff", padding: "2.5rem 0" }}>
+          <BusinessStats />
+        </section>
+        <section style={{ background: "#222a3a", color: "#fff", padding: "2.5rem 0", textAlign: "center" }}>
+          <h2 style={{ color: "var(--color-gold)", marginBottom: 16 }}>Ready to Get Started?</h2>
+          <p style={{ marginBottom: 24 }}>Contact us today for a free quote or to discuss your project needs.</p>
+          <a href="/contact" style={{ background: "var(--color-gold)", color: "#181818", padding: "1rem 2.5rem", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: "1.2rem" }}>Contact Us</a>
         </section>
       </main>
       <Footer />

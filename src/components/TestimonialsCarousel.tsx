@@ -1,10 +1,10 @@
 "use client";
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import styles from "./TestimonialsCarousel.module.css";
-import { useEffect } from "react";
 
 const testimonials = [
   { name: "Ahmed R.", quote: "Best crane rental in the UAE! Always on time.", company: "BuildPro" },
@@ -18,35 +18,33 @@ const testimonials = [
   { name: "Raj K.", quote: "Exceptional service and delivery times.", company: "PrimeWorks" },
 ];
 
-export default function TestimonialsCarousel() {
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: true,
-    slides: { perView: 3, spacing: 24 },
-    breakpoints: {
-      "(max-width: 900px)": { slides: { perView: 1, spacing: 12 } },
-      "(max-width: 1200px)": { slides: { perView: 2, spacing: 16 } },
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3500,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: { slidesToShow: 2 }
     },
-    drag: true,
-  });
-
-  useEffect(() => {
-    if (!instanceRef.current) return;
-    const slider = instanceRef.current;
-    let timeout: NodeJS.Timeout;
-    function next() {
-      slider.next();
-      timeout = setTimeout(next, 3500);
+    {
+      breakpoint: 900,
+      settings: { slidesToShow: 1 }
     }
-    timeout = setTimeout(next, 3500);
-    return () => clearTimeout(timeout);
-  }, [instanceRef]);
+  ]
+};
 
+export default function TestimonialsCarousel() {
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.heading}>What Our Clients Say</div>
-      <div ref={sliderRef} className={`keen-slider ${styles.carousel}`}>
+      <Slider {...settings} className={styles.carousel}>
         {testimonials.map((t, i) => (
-          <div className={`keen-slider__slide ${styles.slide}`} key={i}>
+          <div className={styles.slide} key={i}>
             <div className={styles.avatarWrap}>
               <FontAwesomeIcon icon={faUserCircle} className={styles.avatar} />
             </div>
@@ -55,7 +53,7 @@ export default function TestimonialsCarousel() {
             <div className={styles.company}>{t.company}</div>
           </div>
         ))}
-      </div>
+      </Slider>
     </section>
   );
 } 

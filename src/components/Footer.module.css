@@ -1,24 +1,91 @@
 .footer {
   width: 100%;
-  background: var(--color-grey);
-  color: var(--color-text-main);
-  padding: 2rem 0 1rem 0;
-  text-align: center;
+  background: #181c2a;
+  color: #fff;
+  padding: 2.5rem 0 1rem 0;
   font-size: 1rem;
   margin-top: 3rem;
   box-shadow: 0 -2px 8px rgba(37,99,235,0.04);
 }
-.info {
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+  gap: 2.5rem;
+}
+.brand {
+  flex: 1 1 220px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.5rem;
-  align-items: center;
+}
+.companyName {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-gold);
+}
+.since {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+.links {
+  flex: 1 1 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.linksTitle {
+  color: var(--color-gold);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 .link {
-  color: var(--color-blue);
+  color: #fff;
   text-decoration: none;
   transition: color 0.2s;
+  margin-bottom: 0.2rem;
 }
 .link:hover {
   color: var(--color-gold);
+}
+.contact {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.socials {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 1.1rem;
+}
+.socials a {
+  color: var(--color-gold);
+  font-size: 1.3rem;
+  transition: color 0.2s;
+}
+.socials a:hover {
+  color: #fff;
+}
+.bottom {
+  text-align: center;
+  color: #bbb;
+  font-size: 0.98rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 900px) {
+  .top {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .brand, .links, .contact {
+    align-items: center;
+    text-align: center;
+  }
 } 

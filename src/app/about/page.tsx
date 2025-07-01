@@ -1,38 +1,64 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PageBanner from "../../components/PageBanner";
+import BusinessStats from "../../components/BusinessStats";
 
 export default function AboutPage() {
   return (
     <>
       <Header />
       <PageBanner title="About Us" img="/Crane2.png" />
-      <main style={{ minHeight: "40vh", background: "var(--color-blue)", padding: "2rem 0" }}>
-        <section style={{ maxWidth: 800, margin: "0 auto", color: "#fff", textAlign: "center" }}>
-          <h2 style={{ color: "var(--color-gold)", marginBottom: 16 }}>Our Story</h2>
-          <p style={{ marginBottom: 24 }}>
-            Founded in 1994, Hilwan General Land Transport L.L.C. has grown from a small local business into one of the UAE's most trusted names in rental cranes and cargo transport. Our commitment to reliability, safety, and customer satisfaction has driven our success for over 30 years.
-          </p>
-          <h3 style={{ color: "var(--color-gold)", marginBottom: 8 }}>Mission</h3>
-          <p style={{ marginBottom: 16 }}>
-            To provide safe, efficient, and innovative transport and lifting solutions that empower our clients to achieve their goals.
-          </p>
-          <h3 style={{ color: "var(--color-gold)", marginBottom: 8 }}>Our Values</h3>
-          <ul style={{ listStyle: "none", padding: 0, marginBottom: 24 }}>
-            <li>✔️ Safety First</li>
-            <li>✔️ Customer Focus</li>
-            <li>✔️ Integrity & Trust</li>
-            <li>✔️ Innovation</li>
-            <li>✔️ Teamwork</li>
-          </ul>
-          <h3 style={{ color: "var(--color-gold)", marginBottom: 8 }}>Timeline</h3>
-          <ul style={{ textAlign: "left", maxWidth: 500, margin: "0 auto", color: "#fff" }}>
-            <li><b>1994:</b> Company founded in the UAE</li>
-            <li><b>2000:</b> Expanded fleet to include heavy trucks</li>
-            <li><b>2010:</b> Served 1000+ businesses</li>
-            <li><b>2020:</b> Modernized crane fleet</li>
-            <li><b>Today:</b> Leading provider in the region</li>
-          </ul>
+      <main>
+        <section style={{ background: "#fff", color: "#000000", padding: "2.5rem 0" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+            <h2 style={{ color: "var(--color-gold)", marginBottom: 16 }}>Our Story</h2>
+            <p style={{ marginBottom: 24 }}>
+              Founded in 1994, Hilwan General Land Transport L.L.C. has grown from a small local business into one of the UAE&apos;s most trusted names in rental cranes and cargo transport. Our commitment to reliability, safety, and customer satisfaction has driven our success for over 30 years.
+            </p>
+          </div>
+        </section>
+        <section style={{ background: "#222a3a", color: "#fff", padding: "2.5rem 0" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+            <h2 style={{ color: "var(--color-gold)", marginBottom: 16 }}>Our Values</h2>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 32, justifyContent: "center", marginTop: 32 }}>
+              <div style={{ background: "#181c2a", borderRadius: 16, padding: 24, width: 220 }}>
+                <b style={{ color: "var(--color-gold)" }}>Safety First</b>
+                <p>We prioritize safety in every operation and project.</p>
+              </div>
+              <div style={{ background: "#181c2a", borderRadius: 16, padding: 24, width: 220 }}>
+                <b style={{ color: "var(--color-gold)" }}>Customer Focus</b>
+                <p>Your satisfaction is our top priority, always.</p>
+              </div>
+              <div style={{ background: "#181c2a", borderRadius: 16, padding: 24, width: 220 }}>
+                <b style={{ color: "var(--color-gold)" }}>Integrity</b>
+                <p>We operate with honesty, transparency, and trust.</p>
+              </div>
+              <div style={{ background: "#181c2a", borderRadius: 16, padding: 24, width: 220 }}>
+                <b style={{ color: "var(--color-gold)" }}>Innovation</b>
+                <p>We embrace new technology and ideas to serve you better.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section style={{ background: "#fff", color: "#fff", padding: "2.5rem 0" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+            <h2 style={{ color: "var(--color-gold)", marginBottom: 16 }}>Our Journey</h2>
+            <ul style={{ textAlign: "left", maxWidth: 500, margin: "32px auto 0 auto", color: "#000", fontSize: "1.1rem", lineHeight: 1.7 }}>
+              <li><b>1994:</b> Company founded in the UAE</li>
+              <li><b>2000:</b> Expanded fleet to include heavy trucks</li>
+              <li><b>2010:</b> Served 1000+ businesses</li>
+              <li><b>2020:</b> Modernized crane fleet</li>
+              <li><b>Today:</b> Leading provider in the region</li>
+            </ul>
+          </div>
+        </section>
+        <section style={{ background: "#222a3a", color: "#fff", padding: "2.5rem 0" }}>
+          <BusinessStats />
+        </section>
+        <section style={{ background: "#1a2238", color: "#fff", padding: "2.5rem 0", textAlign: "center" }}>
+          <h2 style={{ color: "var(--color-gold)", marginBottom: 16 }}>Want to Work With Us?</h2>
+          <p style={{ marginBottom: 24 }}>Contact us today to learn more about our company or to discuss your project needs.</p>
+          <a href="/contact" style={{ background: "var(--color-gold)", color: "#181818", padding: "1rem 2.5rem", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: "1.2rem" }}>Contact Us</a>
         </section>
       </main>
       <Footer />

@@ -1,6 +1,6 @@
 .testimonialsSection {
   width: 100vw;
-  background: var(--color-blue);
+  background:  rgb(245, 245, 245);
   padding: 3rem 0 2rem 0;
   display: flex;
   flex-direction: column;
@@ -23,10 +23,11 @@
   box-shadow: var(--neomorph-shadow);
   padding: 2.2rem 1.5rem 1.5rem 1.5rem;
   display: flex;
+
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 0 0.5rem;
+  margin: 2rem;
   min-height: 220px;
   transition: box-shadow 0.2s, transform 0.2s;
   animation: fadeUp 0.6s ease both;
@@ -40,8 +41,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 .avatar {
   color: var(--color-gold);

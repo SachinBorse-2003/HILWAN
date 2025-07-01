@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faTruck, faBuilding, faImages, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faTruck, faBuilding, faImages, faEnvelope, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const navLinks = [
   { name: "Home", href: "/", icon: faHome },
@@ -13,6 +14,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className={styles.header}>
       <div className={styles.logoWrap}>
@@ -20,7 +22,35 @@ export default function Header() {
           <Image src="/logo.png" alt="Hilwan Logo" width={150} height={85} priority />
         </Link>
       </div>
-      <nav className={styles.nav}>
+      <button
+        className={styles.burger}
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+        aria-controls="main-nav"
+        onClick={() => setMenuOpen((v) => !v)}
+      >
+        <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+      </button>
+      <nav
+        className={
+          menuOpen
+            ? `${styles.nav} ${styles.navMobile} ${styles.navOpen}`
+            : `${styles.nav} ${styles.navMobile}`
+        }
+        id="main-nav"
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            className={styles.navLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            <FontAwesomeIcon icon={link.icon} className={styles.icon} /> {link.name}
+          </Link>
+        ))}
+      </nav>
+      <nav className={styles.navDesktop}>
         {navLinks.map((link) => (
           <Link key={link.name} href={link.href} className={styles.navLink}>
             <FontAwesomeIcon icon={link.icon} className={styles.icon} /> {link.name}
