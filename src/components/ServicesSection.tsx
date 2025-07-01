@@ -3,19 +3,19 @@ import styles from './ServicesSection.module.css';
 
 const services = [
   {
-    title: 'Rental of Loading, Lifting & Construction',
-    img: '/crane-home.jpg',
+    title: 'Rental Cranes',
+    img: '/Crane1.png',
     desc: 'Professional crane rental and construction logistics for all project sizes. Modern fleet, expert operators.',
     main: true,
   },
   {
-    title: 'Cargo Transport by Light Truck',
-    img: '/crane1.jpg',
+    title: 'Light Trucks',
+    img: '/Light-Truck1.png',
     desc: 'Efficient cargo transport for small and medium loads across the UAE. Reliable and timely service.',
   },
   {
-    title: 'Cargo Transport by Heavy Truck',
-    img: '/crane2.jpg',
+    title: 'Heavy Trucks',
+    img: '/Heavy-Truck1.png',
     desc: 'Heavy-duty transport solutions for large cargo and construction materials. Safe and secure delivery.',
   },
 ];
@@ -25,7 +25,7 @@ export default function ServicesSection() {
     <section className={styles.servicesSection} id="services">
       <h2 className={styles.heading}>Our Services</h2>
       <div className={styles.cardsWrap}>
-        {services.map((service, i) => (
+        {services.map((service) => (
           <div
             key={service.title}
             className={service.main ? `${styles.card} ${styles.main}` : styles.card}

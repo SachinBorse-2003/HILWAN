@@ -4,7 +4,6 @@ import HeroSection from "../components/HeroSection";
 import ServicesCarousel from "../components/ServicesCarousel";
 import BusinessStats from "../components/BusinessStats";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
-import styles from "./page.module.css";
 
 export default function HomePage() {
   return (

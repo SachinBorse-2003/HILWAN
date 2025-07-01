@@ -6,7 +6,7 @@ export default function HeroCarousel() {
   return (
     <section className={styles.heroSection}>
       <div className={styles.bgWrap}>
-        <Image src="/crane-home.jpg" alt="Rental Crane" fill priority className={styles.bgImg} />
+        <Image src="/crane-home.png" alt="Rental Crane" fill priority className={styles.bgImg} />
         <div className={styles.gradientOverlay} />
         {/* Decorative SVG geometric shapes */}
         <svg className={styles.svg1} width="120" height="120" viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="60" fill="#2563eb22" /></svg>

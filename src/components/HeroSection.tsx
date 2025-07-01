@@ -1,7 +1,5 @@
 import Image from "next/image";
 import styles from "./HeroSection.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTruckLoading } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroSection() {
   return (
