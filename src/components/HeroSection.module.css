@@ -1,7 +1,7 @@
 .heroSection {
   position: relative;
   width: 100vw;
-  min-height: 60vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@
   position: absolute;
   top: 0; left: 0; width: 100vw; height: 100%;
   
-  opacity: 0.05;
+  opacity: 0.9;
   z-index: 2;
 }
 .overlay {
@@ -29,12 +29,13 @@
   width: 100vw;
   min-height: 60vh;
   display: flex;
+  background-color: rgb(245, 245, 245);
+  opacity: 0.95;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 2rem 1rem;
-  animation: fadeIn 0.7s ease both;
 }
 .icon {
   color: var(--color-gold);
@@ -87,15 +88,4 @@
   .heroSection, .overlay {
     min-height: 40vh;
   }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+} 

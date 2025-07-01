@@ -8,7 +8,7 @@ export default function HeroSection() {
         <Image src="/crane-home.png" alt="Rental Crane" fill priority className={styles.bgImg} />
         <div className={styles.gradientOverlay} />
       </div>
-      <div className={`${styles.overlay} glass`}>
+      <div className={styles.overlay}>
         <Image src="/crane-icon.png" alt="Crane-Icon" width={100} height={100} />
         <h1>
           <span className={styles.gold}>Biggest Rental Crane Service</span> in UAE

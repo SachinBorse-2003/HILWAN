@@ -14,7 +14,7 @@ const navLinks = [
 
 export default function Header() {
   return (
-    <header className={`${styles.header} glass`}>
+    <header className={styles.header}>
       <div className={styles.logoWrap}>
         <Link href="/">
           <Image src="/logo.png" alt="Hilwan Logo" width={150} height={85} priority />
