@@ -14,6 +14,8 @@ const testimonials = [
   { name: "John D.", quote: "Affordable and efficient. Will use again.", company: "CargoXpress" },
   { name: "Fatima Z.", quote: "The only company we trust for heavy transport.", company: "Skyline Dev" },
   { name: "Omar L.", quote: "Top-notch service and modern equipment.", company: "GigaBuild" },
+  { name: "Lina P.", quote: "Friendly staff and quality cranes.", company: "MetroBuild" },
+  { name: "Raj K.", quote: "Exceptional service and delivery times.", company: "PrimeWorks" },
 ];
 
 export default function TestimonialsCarousel() {

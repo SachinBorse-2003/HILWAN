@@ -20,7 +20,7 @@
   position: absolute;
   top: 0; left: 0; width: 100vw; height: 100%;
   
-  opacity: 0.1;
+  opacity: 0.05;
   z-index: 2;
 }
 .overlay {
@@ -34,6 +34,7 @@
   justify-content: center;
   text-align: center;
   padding: 2rem 1rem;
+  animation: fadeIn 0.7s ease both;
 }
 .icon {
   color: var(--color-gold);
@@ -86,4 +87,15 @@
   .heroSection, .overlay {
     min-height: 40vh;
   }
-} 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
