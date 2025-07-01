@@ -1,6 +1,18 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-black: #181818;
+  --color-gold: #D4AF37;
+  --color-white: #fff;
+  --color-grey: #f5f5f5;
+  --color-blue: #eaf2fb;
+  --color-blue-dark: #2563eb;
+  --color-text-main: #181818;
+  --color-text-gold: #D4AF37;
+  --color-text-light: #666;
+  --glass-bg: rgba(255,255,255,0.7);
+  --glass-blur: 16px;
+  --glass-border: 1.5px solid #eaf2fb88;
+  --neomorph-shadow: 8px 8px 16px #e0e0e0, -8px -8px 16px #ffffff;
+  --neomorph-inset: inset 4px 4px 8px #e0e0e0, inset -4px -4px 8px #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,25 +26,77 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-blue);
+  color: var(--color-text-main);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: var(--color-black);
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+.gold {
+  color: var(--color-gold);
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: var(--glass-border);
+  box-shadow: 0 4px 24px #2563eb11;
+}
+
+.neomorph-card {
+  background: var(--color-white);
+  border-radius: 1.5rem;
+  box-shadow: var(--neomorph-shadow);
+  padding: 2rem;
+  transition: box-shadow 0.2s;
+}
+
+.neomorph-card:active, .neomorph-card:focus {
+  box-shadow: var(--neomorph-inset);
+}
+
+.btn-gold {
+  background: var(--color-gold);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #D4AF3733;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-gold:hover {
+  background: #bfa23a;
+  color: var(--color-black);
+  box-shadow: 0 4px 16px #D4AF3755;
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-gold);
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {

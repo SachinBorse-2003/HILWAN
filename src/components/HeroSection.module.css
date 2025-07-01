@@ -1,0 +1,89 @@
+.heroSection {
+  position: relative;
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.bgWrap {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100%;
+  z-index: 1;
+}
+.bgImg {
+  object-fit: cover;
+  z-index: 1;
+}
+.gradientOverlay {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100%;
+  
+  opacity: 0.1;
+  z-index: 2;
+}
+.overlay {
+  position: relative;
+  z-index: 10;
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.icon {
+  color: var(--color-gold);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.overlay h1 {
+  font-size: 2.6rem;
+  color: var(--color-black);
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+.gold {
+  color: var(--color-gold);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+.overlay h2 {
+  font-size: 1.3rem;
+  color: var(--color-black);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.ctaBtn {
+  background: var(--color-gold);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px #D4AF3733;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+.ctaBtn:hover {
+  background: #bfa23a;
+  color: var(--color-black);
+  transform: scale(1.04);
+}
+@media (max-width: 700px) {
+  .overlay h1 {
+    font-size: 1.5rem;
+  }
+  .overlay h2 {
+    font-size: 1rem;
+  }
+  .heroSection, .overlay {
+    min-height: 40vh;
+  }
+} 
