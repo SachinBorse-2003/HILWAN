@@ -48,7 +48,7 @@
   z-index: 2;
 }
 .imgWrap {
-  border: 2px solid var(--color-gold);
+  
   margin-bottom: 1.2rem;
   display: flex;
   align-items: center;

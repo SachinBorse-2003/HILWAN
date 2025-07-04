@@ -1,7 +1,6 @@
 "use client";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import useEmblaCarousel from "embla-carousel-react";
+import { useEffect, useState, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import styles from "./TestimonialsCarousel.module.css";
@@ -18,42 +17,68 @@ const testimonials = [
   { name: "Raj K.", quote: "Exceptional service and delivery times.", company: "PrimeWorks" },
 ];
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3500,
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: { slidesToShow: 2 }
-    },
-    {
-      breakpoint: 900,
-      settings: { slidesToShow: 1 }
-    }
-  ]
-};
-
 export default function TestimonialsCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // Autoplay
+  useEffect(() => {
+    if (!emblaApi) return;
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [emblaApi]);
+
+  // Update selected index for dots
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi]);
+
+  // Dots navigation
+  const scrollTo = useCallback((idx: number) => {
+    if (emblaApi) emblaApi.scrollTo(idx);
+  }, [emblaApi]);
+
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.heading}>What Our Clients Say</div>
-      <Slider {...settings} className={styles.carousel}>
-        {testimonials.map((t, i) => (
-          <div className={styles.slide} key={i}>
-            <div className={styles.avatarWrap}>
-              <FontAwesomeIcon icon={faUserCircle} className={styles.avatar} />
+      <div className="embla" ref={emblaRef} style={{ overflow: "hidden", width: "100%" }}>
+        <div className="embla__container" style={{ display: "flex" }}>
+          {testimonials.map((t, i) => (
+            <div className={`embla__slide ${styles.slide}`} key={i} style={{ flex: "0 0 100%", minWidth: 0 }}>
+              <div className={styles.avatarWrap}>
+                <FontAwesomeIcon icon={faUserCircle} className={styles.avatar} />
+              </div>
+              <div className={styles.quote}>&ldquo;{t.quote}&rdquo;</div>
+              <div className={styles.name}>{t.name}</div>
+              <div className={styles.company}>{t.company}</div>
             </div>
-            <div className={styles.quote}>&ldquo;{t.quote}&rdquo;</div>
-            <div className={styles.name}>{t.name}</div>
-            <div className={styles.company}>{t.company}</div>
-          </div>
+          ))}
+        </div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 16 }}>
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => scrollTo(i)}
+            aria-label={`Go to testimonial ${i + 1}`}
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              border: "none",
+              background: i === selectedIndex ? "var(--color-gold)" : "#ccc",
+              cursor: "pointer",
+              transition: "background 0.2s"
+            }}
+          />
         ))}
-      </Slider>
+      </div>
     </section>
   );
 } 

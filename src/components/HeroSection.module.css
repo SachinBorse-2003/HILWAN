@@ -16,26 +16,21 @@
   object-fit: cover;
   z-index: 1;
 }
-.gradientOverlay {
-  position: absolute;
-  top: 0; left: 0; width: 100vw; height: 100%;
-  
-  opacity: 0.9;
-  z-index: 2;
-}
+
 .overlay {
-  position: relative;
+  position: absolute;
   z-index: 10;
-  width: 100vw;
-  min-height: 60vh;
+  width: 65vw;
+  min-height: 5vh;
   display: flex;
-  background-color: rgb(245, 245, 245);
-  opacity: 0.95;
+  
+  background-color: #fff;
+  opacity: 0.8;
   flex-direction: column;
-  align-items: center;
+  
   justify-content: center;
   text-align: center;
-  padding: 2rem 1rem;
+  
 }
 .icon {
   color: var(--color-gold);
@@ -88,4 +83,13 @@
   .heroSection, .overlay {
     min-height: 40vh;
   }
+}
+.bgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 } 

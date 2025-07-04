@@ -1,13 +1,78 @@
+"use client";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import PageBanner from "../../components/PageBanner";
 import BusinessStats from "../../components/BusinessStats";
+import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
+import styles from "../../components/PageBanner.module.css";
+import { useEffect } from "react";
+
+const carouselImages = [
+  "/crane-home.png",
+  "/Crane2.png",
+  "/Crane3.png",
+  "/hilwanTransport.jpeg",
+  "/Crane4.png",
+  "/Heavy-Truck1.png",
+  "/terrain.png",
+  "/Light-Truck1.png",
+  "/Trailer.png",
+];
 
 export default function AboutPage() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const timer = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 2500);
+    return () => clearInterval(timer);
+  }, [emblaApi]);
+
   return (
     <>
       <Header />
-      <PageBanner title="About Us" img="/Crane2.png" />
+      <section className={styles.banner} style={{ minHeight: "80vh", width: "100vw", position: "relative" }}>
+        <div
+          className="embla"
+          ref={emblaRef}
+          style={{ width: "100vw", height: "80vh", overflow: "hidden", position: "relative" }}
+        >
+          <div
+            className="embla__container"
+            style={{ display: "flex", height: "80vh", width: "100vw", transition: "transform 0.3s" }}
+          >
+            {carouselImages.map((img, i) => (
+              <div
+                className="embla__slide"
+                key={i}
+                style={{ flex: "0 0 100%", position: "relative", width: "100vw", height: "80vh" }}
+              >
+                <Image src={img} alt={`About Banner ${i + 1}`} fill style={{ objectFit: "cover" }} />
+                <div className={styles.overlay} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div
+          className={styles.content}
+          style={{
+            zIndex: 3,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <h1>About Us</h1>
+        </div>
+      </section>
       <main>
         <section style={{ background: "#fff", color: "#000000", padding: "2.5rem 0" }}>
           <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>

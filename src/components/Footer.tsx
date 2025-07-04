@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-import Image from "next/image";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brand}>
-          <Image src="/logo.png" alt="Hilwan Logo" width={120} height={60} />
+          
           <div className={styles.companyName}>Hilwan General Land Transport L.L.C.</div>
           <div className={styles.since}>Since 1994</div>
         </div>
@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.bottom}>
-        &copy; {new Date().getFullYear()} Hilwantransport.ae. All rights reserved.
+        &copy;  Hilwantransport.ae. All rights reserved.
       </div>
     </footer>
   );

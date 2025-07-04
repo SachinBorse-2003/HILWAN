@@ -20,7 +20,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.logoWrap}>
         <Link href="/">
-          <Image src="/logo.png" alt="Hilwan Logo" width={150} height={85} priority />
+          <Image src="/logo2.png" alt="Hilwan Logo" width={170} height={110} priority />
         </Link>
       </div>
       <button

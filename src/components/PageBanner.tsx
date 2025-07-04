@@ -17,7 +17,7 @@ export default function PageBanner({
         <Image src={img} alt={title} fill priority className={styles.bgImg} />
         <div className={styles.overlay} />
       </div>
-      <div className={`${styles.content} glass`}>
+      <div className={styles.content}>
         <h1>{title}</h1>
         {children}
       </div>

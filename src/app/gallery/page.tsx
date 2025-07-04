@@ -5,7 +5,8 @@ import Image from "next/image";
 
 export default function GalleryPage() {
   const images = [
-    "/Crane1.png","/Crane2.png","/Crane3.png","/Crane4.png","/Heavy-Truck1.png","/Heavy-Truck2.png","/Light-Truck1.png","/Light-Truck2.png"
+    "/Crane1.png","/Crane2.png","/Crane3.png","/Crane4.png","/Heavy-Truck1.png","/Heavy-Truck2.png","/Light-Truck1.png","/Light-Truck2.png",
+    "/Trailer.png", "/scissorlift.png", "/manlift.png", "/spider-crane.png", "/terrain.png", "/crawlers.png", "/mobilecrane.png", "/powerplant.png", "/marine.png", "/ShippingPort.png", "/manufacturing.png", "/oil-gas.png", "/hilwan-havoc.png", "/hilwan-constuction.png"
   ];
   return (
     <>
