@@ -66,3 +66,8 @@ export default function ContactPage() {
     </>
   );
 }
+
+export const metadata = {
+  title: "Contact Hilwan General Land Transport L.L.C. | Crane Rental & Transport UAE",
+  description: "Get in touch with Hilwan General Land Transport L.L.C. for crane rental, transport, and logistics services in Dubai and the UAE. Request a quote or ask about our fleet.",
+};

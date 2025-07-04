@@ -45,3 +45,8 @@ export default function ServicesPage() {
     </>
   );
 }
+
+export const metadata = {
+  title: "Crane Rental & Transport Services | Hilwan General Land Transport L.L.C.",
+  description: "Explore our full range of crane rental, heavy and light truck transport, and construction logistics services in Dubai and across the UAE. Hilwan General Land Transport L.L.C. is your trusted partner since 1994.",
+};

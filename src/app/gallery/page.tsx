@@ -43,3 +43,8 @@ export default function GalleryPage() {
     </>
   );
 }
+
+export const metadata = {
+  title: "Gallery | Hilwan General Land Transport L.L.C. Fleet & Projects",
+  description: "View our gallery of cranes, trucks, and recent projects. Hilwan General Land Transport L.L.C. showcases its modern fleet and successful operations across the UAE.",
+};

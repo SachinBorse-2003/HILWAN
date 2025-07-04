@@ -31,6 +31,42 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <meta name="keywords" content="crane rental, crane hire, heavy transport, cargo transport, truck rental, construction logistics, Dubai, UAE, Hilwan, Hilwantransport, heavy equipment, mobile crane, crawler crane, rough terrain crane, spider crane, trailer rental, manlift, scissor lift, shipping, manufacturing, oil and gas, marine, logistics company" />
+        <meta property="og:title" content="Hilwan General Land Transport L.L.C." />
+        <meta property="og:description" content="Professional rental cranes, cargo transport by light and heavy trucks, and construction logistics in the UAE since 1994." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hilwantransport.ae/" />
+        <meta property="og:image" content="https://hilwantransport.ae/logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hilwan General Land Transport L.L.C." />
+        <meta name="twitter:description" content="Professional rental cranes, cargo transport by light and heavy trucks, and construction logistics in the UAE since 1994." />
+        <meta name="twitter:image" content="https://hilwantransport.ae/logo.png" />
+        <link rel="canonical" href="https://hilwantransport.ae/" />
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Hilwan General Land Transport L.L.C.",
+            "url": "https://hilwantransport.ae/",
+            "logo": "https://hilwantransport.ae/logo.png",
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "telephone": "+971588888302",
+              "contactType": "customer service",
+              "areaServed": "AE",
+              "availableLanguage": ["English", "Arabic"]
+            }],
+            "sameAs": [
+              "https://facebook.com",
+              "https://instagram.com",
+              "https://linkedin.com"
+            ]
+          }
+        `}</script>
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
         <a
