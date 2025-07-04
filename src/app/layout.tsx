@@ -45,6 +45,7 @@ export default function RootLayout({
         <meta name="twitter:description" content="Professional rental cranes, cargo transport by light and heavy trucks, and construction logistics in the UAE since 1994." />
         <meta name="twitter:image" content="https://hilwantransport.ae/logo.png" />
         <link rel="canonical" href="https://hilwantransport.ae/" />
+        <meta name="google-site-verification" content="wGTKgw-IERoRYfKPBcOPUu7hqAm6xql1YWVWXuRaK5Q" />
         <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
