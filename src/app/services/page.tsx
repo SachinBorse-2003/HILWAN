@@ -3,6 +3,13 @@ import Footer from "../../components/Footer";
 import PageBanner from "../../components/PageBanner";
 import ServicesSection from "../../components/ServicesSection";
 import BusinessStats from "../../components/BusinessStats";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services | Hilwan General Land Transport L.L.C.",
+  description:
+    "Discover our range of crane rental, heavy transport, and logistics services available throughout the UAE."
+};
 
 export default function ServicesPage() {
   return (

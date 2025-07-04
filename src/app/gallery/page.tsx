@@ -2,6 +2,12 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PageBanner from "../../components/PageBanner";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gallery | Hilwan General Land Transport L.L.C.",
+  description: "Browse photos of our crane fleet and transport projects across the UAE."
+};
 
 export default function GalleryPage() {
   const images = [
