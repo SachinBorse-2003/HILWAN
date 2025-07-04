@@ -5,6 +5,13 @@ import ServicesSection from "../components/ServicesSection";
 import BusinessStats from "../components/BusinessStats";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Hilwan General Land Transport L.L.C. | Crane Rental & Transport UAE",
+  description:
+    "Professional rental cranes and cargo transport services throughout the UAE."
+};
 
 export default function HomePage() {
   return (
