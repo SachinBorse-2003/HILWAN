@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
         <div className={styles.contact}>
           <div className={styles.linksTitle}>Contact</div>
-          <div><FontAwesomeIcon icon={faPhone} /> <a href="tel:+971588888302" className={styles.link}>+971 58 888 8302</a></div>
+          <div><FontAwesomeIcon icon={faPhone} /> <a href="tel:+971555557860" className={styles.link}>055 555 7860</a></div>
           <div><FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:hilwantransport@gmail.com" className={styles.link}>hilwantransport@gmail.com</a></div>
           <div><FontAwesomeIcon icon={faMapMarkerAlt} /> Dubai, United Arab Emirates</div>
           <div className={styles.socials}>

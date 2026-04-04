@@ -5,7 +5,7 @@ import PageBanner from "../../components/PageBanner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-const whatsappNumber = "971588888302";
+const whatsappNumber = "971555557860";
 const whatsappMessage = encodeURIComponent("Hello, I am interested in learning more about your crane rental, transport, and logistics services. Please provide more details.");
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
             </form>
             <div style={{ flex: "1 1 260px", background: "#222a3a", borderRadius: 12, padding: 32, color: "#fff", minWidth: 220, display: "flex", flexDirection: "column", gap: 16, justifyContent: "center" }}>
               <h2 style={{ color: "var(--color-gold)", marginBottom: 8 }}>Contact Info</h2>
-              <div><b>Phone:</b> <a href="tel:+971588888302" style={{ color: "var(--color-gold)" }}>+971 58 888 8302</a></div>
+              <div><b>Phone:</b> <a href="tel:+971555557860" style={{ color: "var(--color-gold)" }}>055 555 7860</a></div>
               <div><b>WhatsApp:</b> <a href={whatsappLink} target="_blank" rel="noopener" style={{ color: "#25D366", fontWeight: 700, marginLeft: 6 }}><FontAwesomeIcon icon={faWhatsapp} /> Chat on WhatsApp</a></div>
               <div><b>Address:</b> Dubai, United Arab Emirates</div>
               <div style={{ marginTop: 16 }}>

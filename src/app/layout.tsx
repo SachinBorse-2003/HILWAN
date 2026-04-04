@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const whatsappNumber = "971588888302";
+const whatsappNumber = "971555557860";
 const whatsappMessage = encodeURIComponent("Hello, I am interested in learning more about your crane rental, transport, and logistics services. Please provide more details.");
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
 export const metadata: Metadata = {
   title: "Hilwan General Land Transport L.L.C.",
   description:
-    "Hilwantransport.ae - Professional rental cranes, cargo transport by light and heavy trucks, and construction logistics in the UAE since 1994. Contact: +971 58 888 8302, hilwantransport@gmail.com.",
+    "Hilwantransport.ae - Professional rental cranes, cargo transport by light and heavy trucks, and construction logistics in the UAE since 1994. Contact: 055 555 7860, hilwantransport@gmail.com.",
 };
 
 export default function RootLayout({
@@ -55,7 +55,7 @@ export default function RootLayout({
             "logo": "https://hilwantransport.ae/logo.png",
             "contactPoint": [{
               "@type": "ContactPoint",
-              "telephone": "+971588888302",
+              "telephone": "+971555557860",
               "contactType": "customer service",
               "areaServed": "AE",
               "availableLanguage": ["English", "Arabic"]
