@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,23 @@ const geistMono = Geist_Mono({
 });
 
 const whatsappNumber = "971555557860";
+const phoneTel = `tel:+${whatsappNumber}`;
 const whatsappMessage = encodeURIComponent("Hello, I am interested in learning more about your crane rental, transport, and logistics services. Please provide more details.");
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+const fabStyle = {
+  borderRadius: "50%",
+  width: 60,
+  height: 60,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  boxShadow: "0 2px 8px #2228",
+  fontSize: 28,
+  transition: "box-shadow 0.2s",
+  color: "#fff",
+  textDecoration: "none",
+} as const;
 
 export const metadata: Metadata = {
   title: "Hilwan General Land Transport L.L.C.",
@@ -70,31 +86,35 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener"
-          aria-label="WhatsApp"
+        <div
           style={{
             position: "fixed",
             right: 24,
             bottom: 24,
             zIndex: 1000,
-            background: "#25D366",
-            color: "#fff",
-            borderRadius: "50%",
-            width: 60,
-            height: 60,
             display: "flex",
+            flexDirection: "column",
+            gap: 12,
             alignItems: "center",
-            justifyContent: "center",
-            boxShadow: "0 2px 8px #2228",
-            fontSize: 32,
-            transition: "box-shadow 0.2s"
           }}
         >
-          <FontAwesomeIcon icon={faWhatsapp} />
-        </a>
+          <a
+            href={phoneTel}
+            aria-label="Call us"
+            style={{ ...fabStyle, background: "var(--color-gold)", color: "#181818" }}
+          >
+            <FontAwesomeIcon icon={faPhone} />
+          </a>
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            style={{ ...fabStyle, background: "#25D366", fontSize: 32 }}
+          >
+            <FontAwesomeIcon icon={faWhatsapp} />
+          </a>
+        </div>
       </body>
     </html>
   );
